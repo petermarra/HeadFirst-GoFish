@@ -73,6 +73,7 @@
             this.buttonStart.TabIndex = 3;
             this.buttonStart.Text = "Start the game!";
             this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
             // listHand
             // 
@@ -84,12 +85,14 @@
             // 
             // buttonAsk
             // 
+            this.buttonAsk.Enabled = false;
             this.buttonAsk.Location = new System.Drawing.Point(376, 528);
             this.buttonAsk.Name = "buttonAsk";
             this.buttonAsk.Size = new System.Drawing.Size(175, 23);
             this.buttonAsk.TabIndex = 5;
             this.buttonAsk.Text = "Ask for a Card";
             this.buttonAsk.UseVisualStyleBackColor = true;
+            this.buttonAsk.Click += new System.EventHandler(this.buttonAsk_Click);
             // 
             // textProgress
             // 
