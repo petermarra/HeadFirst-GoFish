@@ -37,6 +37,7 @@
             this.textProgress = new System.Windows.Forms.TextBox();
             this.textBooks = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -59,7 +60,6 @@
             // 
             // textName
             // 
-            this.textName.Enabled = false;
             this.textName.Location = new System.Drawing.Point(15, 25);
             this.textName.Name = "textName";
             this.textName.Size = new System.Drawing.Size(173, 20);
@@ -121,11 +121,21 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Books";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 50);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Game Progress";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(568, 565);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBooks);
             this.Controls.Add(this.textProgress);
@@ -155,6 +165,7 @@
         private System.Windows.Forms.TextBox textProgress;
         private System.Windows.Forms.TextBox textBooks;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 

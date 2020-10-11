@@ -39,7 +39,7 @@ namespace GoFish
         {
             Card cardToDeal = cards[index];
             cards.RemoveAt(index);
-            return cardToDeal;
+           return cardToDeal;
         }
 
         /// <summary>
@@ -129,6 +129,10 @@ namespace GoFish
                 return true;
             else
                 return false;
+        }
+        public override string ToString()
+        {
+            return base.ToString();
         }
     }
 }

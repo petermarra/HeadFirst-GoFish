@@ -35,7 +35,7 @@ namespace GoFish
         private void UpdateForm()
         {
             listHand.Items.Clear();
-            foreach (String cardName in game.GetPlayerCardNames)
+            foreach (String cardName in game.GetPlayerCardNames())
                 listHand.Items.Add(cardName);
             textBooks.Text = game.DescribeBooks();
             textProgress.Text += game.DescribePlayerHands();
