@@ -36,11 +36,12 @@ namespace GoFish
         {
             stock.Shuffle();
             for (int i = 0; i < 5; i++)
+            {
                 foreach (Player player in players)
                     player.TakeCard(stock.Deal());
-            //TODO:
-            // foreach (Player player in players)
-            //     player.PullOutBooks();
+            }
+          foreach (Player player in players)
+            PullOutBooks(player);
 
         }
 
@@ -49,14 +50,31 @@ namespace GoFish
             return false;
         }
 
-        //public PullOutBooks(Player plyer)
-        //{
+        public bool PullOutBooks(Player player)
+        {
 
-        //}
+            List<Values> cardBooks = new List<Values>();
+            cardBooks  = (List<Values>)player.PullOutBooks();
+            foreach (var cardBook in cardBooks)
+                books.Add(cardBook, player);
+            if (player.CardCount == 0)
+                return true;
+            else
+                return false;
+        }
 
         public string DescribeBooks()
         {
-            return "TODO: add code";
+            string playerBooks = "";
+            foreach (Player player in players)
+            {
+                foreach (Values value in books.Keys)
+                {
+                    playerBooks += $"{ books[value].Name } has a book of {Card.Plural(value)}.\r\n";   
+                }
+
+            }
+            return playerBooks;
         }
 
         public string GetWinnerName()

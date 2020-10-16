@@ -27,7 +27,7 @@ namespace GoFish
             Value = value; 
         }
 
-        static string Plural(Values value)
+        public static string Plural(Values value)
         {
             if (value == Values.Six)
                 return "Sixes";

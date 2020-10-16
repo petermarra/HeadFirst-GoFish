@@ -26,7 +26,7 @@ namespace GoFish
             textBoxOnForm.Text += $"{name} has jist joined the game.{Environment.NewLine}";
         }
 
-        public IEnumerable<Values> PullOutBooks() 
+        public IEnumerable<Values> PullOutBooks()
         {
             List<Values> books = new List<Values>();
             for (int i = 0; i < 13; i++)
@@ -34,16 +34,16 @@ namespace GoFish
                 Values value = (Values)i;
                 int howMany = 0;
                 for (int card = 0; card < cards.Count; card++)
-                {
                     if (cards.Peek(card).Value == value)
                         howMany++;
-                    if (howMany == 4)
-                        books.Add(value);
+                if (howMany == 4)
+                {
+                    books.Add(value);
                     cards.PullOutValues(value);
                 }
             }
             return books;
-         }
+        }
 
         public Values GetRandomValue()
         {
