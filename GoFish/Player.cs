@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,7 @@ namespace GoFish
             this.random = random;
             this.textBoxOnForm = textBoxOnForm;
             cards = new Deck(new Card[] { });
-            textBoxOnForm.Text += $"{name} has jist joined the game.{Environment.NewLine}";
+            textBoxOnForm.Text += $"{name} has just joined the game.{Environment.NewLine}";
         }
 
         public IEnumerable<Values> PullOutBooks()
@@ -51,16 +52,33 @@ namespace GoFish
             return cards.Peek(random.Next(CardCount)).Value;
         }
 
-        //public Deck DoYouHaveAny (Values value)
-        //{
-        //    //TODO: add code
-            
+        public Deck DoYouHaveAny (Values value)
+        {
+            Deck foundCards = new Deck(new Card[] { } );
 
-        //}
+            if (cards.ContainsValue(value))
+            {
+                foundCards= cards.PullOutValues(value);
+              }
+            textBoxOnForm.Text += $"{this.Name} has {foundCards.Count} {Card.Plural(value)}";
+            return foundCards;
+        }
 
-        public void AskForACard(List<Player> players,int MyIndex, Deck Stock)
+        public void AskForACard(List<Player> players, int MyIndex, Deck Stock)
         {
             //TODO: add code
+        }
+        public void AskForACard(List<Player> players, int MyIndex, Deck Stock,Values value)
+        {
+            textBoxOnForm.Text += $"{players[MyIndex].Name} asks if anyone has a {value}{Environment.NewLine}";
+            for (int i = 0; i < players.Count; i++)
+            {
+                if (i != MyIndex)
+                {
+                    //TODO: Statet here 
+                  //players[i].
+                }
+            }
         }
         public void TakeCard(Card card)
         {

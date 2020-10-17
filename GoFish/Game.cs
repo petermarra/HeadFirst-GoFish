@@ -40,19 +40,26 @@ namespace GoFish
                 foreach (Player player in players)
                     player.TakeCard(stock.Deal());
             }
-          foreach (Player player in players)
-            PullOutBooks(player);
-
-        }
+            foreach (Player player in players)
+                PullOutBooks(player);
+        } 
 
         public bool PlayOneRound(int selectedPlayerCard)
         {
+            Values cardToAskFor = players[0].Peek(selectedPlayerCard).Value;
+            for (int i = 0; i < players.Count; i++)
+            {
+                if (i ==0)
+                {
+                    players[0].AskForACard(players, i, stock,cardToAskFor);
+                }
+            }
+
             return false;
         }
 
         public bool PullOutBooks(Player player)
         {
-
             List<Values> cardBooks = new List<Values>();
             cardBooks  = (List<Values>)player.PullOutBooks();
             foreach (var cardBook in cardBooks)
@@ -70,9 +77,8 @@ namespace GoFish
             {
                 foreach (Values value in books.Keys)
                 {
-                    playerBooks += $"{ books[value].Name } has a book of {Card.Plural(value)}.\r\n";   
+                    playerBooks += $"{ books[value].Name } has a book of {Card.Plural(value)}.{Environment.NewLine}";   
                 }
-
             }
             return playerBooks;
         }
