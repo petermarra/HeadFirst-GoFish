@@ -66,7 +66,7 @@ namespace GoFish
 
         public void AskForACard(List<Player> players, int myIndex, Deck stock)
         {
-            AskForACard(players, myIndex, stock, cards.Peek(random.Next(CardCount)).Value);
+            AskForACard(players, myIndex, stock, GetRandomValue());
         }
         public void AskForACard(List<Player> players, int myIndex, Deck stock,Values value)
         {

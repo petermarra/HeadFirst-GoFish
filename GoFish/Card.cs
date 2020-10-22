@@ -18,9 +18,7 @@ namespace GoFish
             }
         }
 
-        public Suits NumberBetween0And3 { get; }
-        public Values NumberBetween1And13 { get; }
-
+        
         public Card(Suits suit, Values value)
         {
             Suit = suit;
