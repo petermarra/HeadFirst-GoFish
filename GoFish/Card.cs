@@ -32,7 +32,7 @@ namespace GoFish
             if (value == Values.Six)
                 return "Sixes";
             else
-                return $"value.ToString(){"s"}";
+                return $"{value}s";
         }
 
         public override string ToString()

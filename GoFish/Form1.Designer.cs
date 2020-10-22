@@ -38,6 +38,7 @@
             this.textBooks = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.listOpponents = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -80,8 +81,9 @@
             this.listHand.FormattingEnabled = true;
             this.listHand.Location = new System.Drawing.Point(376, 25);
             this.listHand.Name = "listHand";
-            this.listHand.Size = new System.Drawing.Size(175, 485);
+            this.listHand.Size = new System.Drawing.Size(175, 121);
             this.listHand.TabIndex = 4;
+            this.listHand.SelectedIndexChanged += new System.EventHandler(this.listHand_SelectedIndexChanged);
             // 
             // buttonAsk
             // 
@@ -130,11 +132,20 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Game Progress";
             // 
+            // listOpponents
+            // 
+            this.listOpponents.FormattingEnabled = true;
+            this.listOpponents.Location = new System.Drawing.Point(376, 179);
+            this.listOpponents.Name = "listOpponents";
+            this.listOpponents.Size = new System.Drawing.Size(175, 316);
+            this.listOpponents.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(568, 565);
+            this.Controls.Add(this.listOpponents);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBooks);
@@ -166,6 +177,7 @@
         private System.Windows.Forms.TextBox textBooks;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ListBox listOpponents;
     }
 }
 

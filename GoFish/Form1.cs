@@ -35,8 +35,19 @@ namespace GoFish
         private void UpdateForm()
         {
             listHand.Items.Clear();
-            foreach (String cardName in game.GetPlayerCardNames())
+            foreach (String cardName in game.GetPlayerCardNames(0))
                 listHand.Items.Add(cardName);
+            //---------------------
+            listOpponents.Items.Clear();
+            listOpponents.Items.Add("Joe");
+           foreach (String cardName in game.GetPlayerCardNames(1))
+                listOpponents.Items.Add(cardName);
+            listOpponents.Items.Add("----------------");
+            listOpponents.Items.Add("Bob");
+            foreach (String cardName in game.GetPlayerCardNames(2))
+                listOpponents.Items.Add(cardName);
+            //---------------------
+
             textBooks.Text = game.DescribeBooks();
             textProgress.Text += game.DescribePlayerHands();
             textProgress.SelectionStart = textProgress.Text.Length;
@@ -59,6 +70,11 @@ namespace GoFish
             }
             else
                 UpdateForm();
+        }
+
+        private void listHand_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -49,12 +49,12 @@ namespace GoFish
             Values cardToAskFor = players[0].Peek(selectedPlayerCard).Value;
             for (int i = 0; i < players.Count; i++)
             {
-                if (i ==0)
-                {
-                    players[0].AskForACard(players, i, stock,cardToAskFor);
-                }
+                if (i == 0)
+                    players[0].AskForACard(players, i, stock, cardToAskFor);
+                else
+                    players[i].AskForACard(players, i, stock);
             }
-
+            players[0].SortHand();
             return false;
         }
 
@@ -88,9 +88,9 @@ namespace GoFish
             return "TODO: add code";
         }
 
-        public IEnumerable<string> GetPlayerCardNames()
+        public IEnumerable<string> GetPlayerCardNames(int plyr)
         {
-            return players[0].GetCardNames();
+            return players[plyr].GetCardNames();
         }
 
         public string DescribePlayerHands()
