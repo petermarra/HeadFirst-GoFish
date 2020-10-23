@@ -53,6 +53,7 @@ namespace GoFish
                     players[0].AskForACard(players, i, stock, cardToAskFor);
                 else
                     players[i].AskForACard(players, i, stock);
+                PullOutBooks(players[i]);
             }
             players[0].SortHand();
             return false;
@@ -73,13 +74,10 @@ namespace GoFish
         public string DescribeBooks()
         {
             string playerBooks = "";
-            foreach (Player player in players)
-            {
                 foreach (Values value in books.Keys)
                 {
                     playerBooks += $"{ books[value].Name } has a book of {Card.Plural(value)}.{Environment.NewLine}";   
                 }
-            }
             return playerBooks;
         }
 

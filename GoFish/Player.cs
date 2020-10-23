@@ -30,7 +30,7 @@ namespace GoFish
         public IEnumerable<Values> PullOutBooks()
         {
             List<Values> books = new List<Values>();
-            for (int i = 0; i < 13; i++)
+            for (int i = 1; i <= 13; i++)
             {
                 Values value = (Values)i;
                 int howMany = 0;
@@ -66,7 +66,7 @@ namespace GoFish
 
         public void AskForACard(List<Player> players, int myIndex, Deck stock)
         {
-            AskForACard(players, myIndex, stock, GetRandomValue());
+            AskForACard(players, myIndex, stock, players[myIndex].GetRandomValue());
         }
         public void AskForACard(List<Player> players, int myIndex, Deck stock,Values value)
         {
